@@ -1,7 +1,14 @@
 package org.example;
 
 public class Solution {
-    public String solution(String my_string) {
-        return my_string.replaceAll("[aeiou]", "");
+    public int solution(String message) {
+        int answer = 0;
+        String[] message1 = message.split("");
+
+        for (int i = 0; i <= message1.length; i++) {
+            answer = i*2;
+        }
+        return answer;
     }
+
 }
