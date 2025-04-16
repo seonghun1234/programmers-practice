@@ -1,26 +1,19 @@
 package org.example;
 
 public class Solution {
-    public int solution(int angle) {
-        if (0 < angle && angle < 90) {
-            return 1;  // 예각
-        } else if (angle == 90) {
-            return 2;  // 직각
-        } else if (90 < angle && angle < 180) {
-            return 3;  // 둔각
+    public int solution(int number, int n, int m) {
+        if(number % n == 0 && number % m == 0){
+            return 1;
+        } else if(n % number == 0 || m % number == 0){
+            return 1;
         } else {
-            return 4;  // 평각
+            return 0;
         }
     }
 
     public static void main(String[] args) {
-        Solution sol = new Solution();
-
-        int[] testAngles = {70,91,180};
-
-        for (int angle : testAngles) {
-            int result = sol.solution(angle);
-            System.out.println("angle = " + angle + ", result = " + result);
-        }
+        Solution s = new Solution();
+        int result = s.solution(55, 10, 5);
+        System.out.println("결과: " + result);
     }
 }
